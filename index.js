@@ -3,8 +3,7 @@ const _ = require('lodash');
 const cors = require('cors');
 
 const tools = require('./tools');
-const fetchSpreadsheet = tools.cacheFunction(require('./fetchSpreadsheet'), 1000*60);
-//const fetchSpreadsheet = require('./fetchSpreadsheet');
+const fetchSpreadsheet = tools.cacheFunction(require('./fetchSpreadsheet'), process.env.CACHE_DURATION || 1000*60);
 
 const defaultResponse = {
 	err: 'usage: http(s):\/\/host\/?id=google spreadsheet id'
