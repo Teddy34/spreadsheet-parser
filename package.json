@@ -4,7 +4,7 @@
   "description": "proxy tool to read published google spreadsheet documents and give json results",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Jordi Sicart",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "express": "^4.14.0",
     "lodash": "^4.15.0",
     "node-fetch": "^1.6.1"
+  },
+  "engines": {
+    "node": "6.5.0"
   }
 }
