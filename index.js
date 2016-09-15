@@ -15,7 +15,10 @@ webServer.use(cors());
 webServer.get('/', (req,res) => 
 	Promise.resolve(req.query.id)
 	.then((id) => (id? fetchSpreadsheet(id) : defaultResponse))
-	.then((result) => res.send(JSON.stringify(result)))
+	.then((result) => {
+		res.header('Content-Type', 'application/json');
+		res.send(JSON.stringify(result))
+	})
 );
 
 webServer.listen(process.env.PORT || 8081);
